@@ -15,7 +15,28 @@ Dependencies can be installed via the following command:
 pip install -r requirements.txt
 ```
 
-After the installation process, run the script. The script will prompt you for an image path and a scale for resizing the image. Entering the values will start the process and the output image and text file will be saved next to the original image.
+After the installation process, you can use the script.
+
+#### Direct Usage
+Run the script by double-clicking. The script will prompt you for an image path and a scale for resizing the image. Entering the values will start the process and the output image and text file will be saved next to the original image.
+
+#### Library Usage
+This script can also be used as a library. An example usage is below.
+
+```python
+from img_to_ascii import ImageToASCII # import as a library
+
+# create the constructor with the image path and optional args
+ascii = ImageToASCII("C:/abc/def.png", scale=50, print_log=True)
+
+ascii.execute() # execute the converting process
+
+img = ascii.get_ascii_image() # get the converted image
+txt = ascii.get_ascii_text() # get the converted image's text version
+
+img.show() # show the image
+print(txt) # print the text
+```
 
 ## Test Run
 
